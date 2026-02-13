@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Capítulo 3: El Último Recuerdo</title>
+    <link rel="stylesheet" href="../css/room-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="vignette"></div>
+    
+    <div id="click-to-illuminate">
+        <p>Está muy oscuro aquí...</p>
+        <span>(Haz clic para encender la luz)</span>
+    </div>
+
+    <div id="flashlight-overlay" class="hidden-cursor"></div>
+
+    <div id="room">
+
+        <div class="item memory-piece" id="piece-1" style="top: 10%; left: 85%;" data-info="Una estadía virtual...">
+            <img src="../media/imgs/recuerdo1.png" alt="Recuerdo">
+        </div>
+        <div class="item memory-piece" id="piece-2" style="top: 85%; left: 20%;" data-info="Un video inolvidable...">
+            <img src="../media/imgs/recuerdo2.png" alt="Recuerdo">
+        </div>
+        <div class="item memory-piece" id="piece-3" style="top: 20; left: 5%;" data-info="Un fragmento de llamada...">
+            <img src="../media/imgs/recuerdo3.png" alt="Recuerdo">
+        </div>
+    </div>
+
+    <div id="progress-bar">
+        <div id="fill"></div>
+    </div>
+
+    <div id="final-step-container" class="hidden">
+        <button id="finish-btn">Proceder a la luz...</button>
+    </div>
+
+    <div id="zoom-modal" class="hidden">
+        <div class="modal-content">
+            <img id="zoomed-image" src="" alt="Recuerdo en detalle">
+            <p id="zoomed-caption"></p>
+            <span class="close-hint">(Haz clic fuera para cerrar)</span>
+        </div>
+    </div>
+
+    <audio id="snd-ambient" src="../media/audio/heavy_ambience.mp3" loop></audio>
+    <audio id="snd-find" src="../media/audio/found_item.mp3"></audio>
+    <audio id="snd-whisper" src="../media/audio/whispering.mp3"></audio>
+
+    <script src="../js/room-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* --- Estilos Base --- */
+body {
+    background-color: #050505;
+    color: #b0b0b0;
+    font-family: 'Cinzel Decorative', serif;
+    display: flex;
+    flex-direction: column; /* Asegura apilado vertical */
+    align-items: center;    /* Centrado horizontal crítico */
+    justify-content: center;/* Centrado vertical */
+    min-height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle at center, #1a1515 0%, #000 100%);
+    overflow: hidden;
+}
+
+/* --- Overlays y Efectos --- */
+#vignette {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+    pointer-events: none; z-index: 10; transition: box-shadow 0.5s;
+}
+
+#start-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,1); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; z-index: 100;
+    cursor: pointer; transition: opacity 1.5s ease-out;
+}
+
+/* --- Contenedores Principales --- */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 2.5s ease-in-out; /* Desvanecimiento suave */
+    z-index: 20;
+}
+
+#continue-container {
+    display: none; /* Por defecto no existe en el layout */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 30;
+    opacity: 0; /* Empieza invisible para el fade-in */
+}
+
+.mystery-text {
+    font-weight: 400; letter-spacing: 3px; margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+/* Wrapper externo para ayudar al centrado del piano */
+.piano-outer-wrapper {
+    display: flex; justify-content: center; width: 100%;
+}
+
+.piano-container {
+    background: #0f0f0f; padding: 40px; border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border: 1px solid #1a1a1a; display: inline-block; /* Importante para centrado */
+}
+
+/* --- Teclas del Piano --- */
+.piano { display: flex; }
+.key { cursor: pointer; transition: background 0.2s, transform 0.1s; box-sizing: border-box;}
+.white { width: 50px; height: 200px; background: linear-gradient(to bottom, #d8d8d8, #a0a0a0); border: 1px solid #222; z-index: 1; border-bottom: 6px solid #111;}
+.black { width: 34px; height: 120px; background: linear-gradient(#333, #000); margin-left: -17px; margin-right: -17px; z-index: 2; border: 1px solid #222; border-bottom: 4px solid #000;}
+
+/* Animación de Pista (Hint) más sutil */
+.hint { animation: pulseHint 3s infinite ease-in-out; }
+@keyframes pulseHint { 0%, 100% { background: inherit; box-shadow: none;} 50% { background: #4d4d4d; box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }}
+.key:active, .playing { background: rgb(87, 87, 87) !important; transform: translateY(4px); box-shadow: inset 0 0 20px rgba(97, 97, 97, 0.8); }
+
+/* --- Botón y Pantalla Final --- */
+.hidden { display: none; }
+.fade-in-slow { animation: fadeIn 4s ease-in; }
+
+#continue-container.show {
+    display: flex;
+    animation: fadeInFinal 3s forwards;
+}
+
+.victory-gif {
+    width: 600px; /* Puedes ajustar este valor según el tamaño real de tu gif */
+    height: auto;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.575); /* Un brillo sutil opcional */
+}
+
+.final-phrase {
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    color: #d3d3d3;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeInFinal {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#next-level-btn {
+    background: transparent;
+    color: #aaa;
+    border: 1px solid #333;
+    padding: 15px 40px;
+    font-family: 'Cinzel Decorative', serif;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#next-level-btn:hover {
+    color: #fff;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

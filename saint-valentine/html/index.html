@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: Una Melodía Perdida</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="vignette"></div>
+
+    <div id="start-overlay">
+        <p>Encuentra el eco...</p>
+        <span id="loading-text">Cargando la biblioteca...</span>
+    </div>
+
+    <audio id="final-song" src="../media/audio/lost_library.mp3" loop="true" preload="auto"></audio>
+
+    <div id="game-container">
+        <h2 class="mystery-text">Encuentra la melodía perdida...</h2>
+        
+        <div class="piano-outer-wrapper">
+            <div class="piano-container">
+                 <div class="piano">
+                    <div class="key white" data-note="F" data-octave="3"></div>
+                    <div class="key black" data-note="Gb" data-octave="3"></div>
+                    <div class="key white" data-note="G" data-octave="3"></div>
+                    <div class="key black" data-note="Ab" data-octave="3"></div>
+                    <div class="key white" data-note="A" data-octave="3"></div>
+                    <div class="key black" data-note="Bb" data-octave="3"></div>
+                    <div class="key white" data-note="B" data-octave="3"></div>
+                    <div class="key white" data-note="C" data-octave="4"></div>
+                    <div class="key black" data-note="Db" data-octave="4"></div>
+                    <div class="key white" data-note="D" data-octave="4"></div>
+                    <div class="key black" data-note="Eb" data-octave="4"></div>
+                    <div class="key white" data-note="E" data-octave="4"></div>
+                    <div class="key white" data-note="F" data-octave="4"></div>
+                    <div class="key black" data-note="Gb" data-octave="4"></div>
+                    <div class="key white" data-note="G" data-octave="4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="continue-container" class="hidden">
+        <img src="../media/imgs/drawing.gif" class="victory-gif" alt="Melodía encontrada">
+        <p class="final-phrase">La melodía ha sido recordada.</p>
+        <button id="next-level-btn" onclick="nextStep()">Siguiente recuerdo</button>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

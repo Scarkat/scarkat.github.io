@@ -1,0 +1,77 @@
+.proposal-body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#main-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Posicionamiento para que ambos coincidan en el centro */
+#envelope-wrapper, #letter-container {
+    position: absolute;
+    transition: opacity 1.5s ease-in-out;
+}
+
+#envelope-wrapper {
+    cursor: pointer;
+    text-align: center;
+    z-index: 2;
+}
+
+#envelope-img {
+    width: 300px; /* Ajusta según tu imagen */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+/* Estilo de la Carta con color caqui/crema */
+.letter-content {
+    background: #fdf5e6; /* Color OldLace, un crema amarillento muy elegante */
+    padding: 60px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    /* Cambio a fuente cursiva elegante */
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    line-height: 1.4;
+    border: 1px solid #e6dbb9; /* Borde sutil más oscuro */
+}
+
+.proposal-question {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 30px;
+    color: #8b0000;
+    letter-spacing: 2px;
+}
+
+/* Animaciones de Fade */
+.fade-out { opacity: 0; pointer-events: none; }
+.fade-in { opacity: 1 !important; }
+.hidden { opacity: 0; pointer-events: none; }
+
+/* Botones (Mantener tus estilos anteriores) */
+.buttons { margin-top: 30px; position: relative; height: 60px; }
+#yes-btn {
+    background: #8b0000; color: #fff; border: none;
+    padding: 12px 35px; font-size: 1rem; cursor: pointer;
+    border-radius: 4px; font-family: 'Montserrat', sans-serif;
+}
+#no-btn {
+    background: transparent; color: #999; border: 1px solid #999;
+    padding: 12px 35px; font-size: 1rem; cursor: pointer;
+    border-radius: 4px; position: absolute; font-family: 'Montserrat', sans-serif;
+}

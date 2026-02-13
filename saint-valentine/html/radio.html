@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Capítulo 2: Frecuencias De Antaño</title>
+    <link rel="stylesheet" href="../css/radio-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="vignette"></div>
+
+    <audio id="audio-static" src="../media/audio/radio_static.mp3" loop></audio>
+    <audio id="audio-whispers" src="../media/audio/whispering.mp3" loop></audio>
+    <audio id="audio-message" src="../media/audio/un_amour.mp3" loop></audio>
+
+    <div id="radio-container">
+        <h2 class="mystery-text">Sintoniza la frecuencia real...</h2>
+        
+        <div class="dial-area">
+            <div class="frequency-display">
+                <span id="freq-value">88.0</span><span class="mhz">MHz</span>
+            </div>
+            
+            <div class="knob-container">
+                <div id="knob" class="knob">
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="continue-container" class="hidden">
+        <img src="../media/imgs/drawing2.gif" class="victory-gif" alt="Recuerdo desbloqueado">
+        <p>La canción ha sido recordada.</p>
+        <button id="next-level-btn" onclick="nextStep()">Siguiente Recuerdo</button>
+    </div>
+
+    <script src="../js/radio-script.js"></script>
+</body>
+</html>
